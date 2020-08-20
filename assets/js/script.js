@@ -16,11 +16,6 @@ xhr.onreadystatechange = function(){
                 var textnode = document.createTextNode(string); 
                 list.appendChild(textnode);
                 document.getElementById("myList").appendChild(list);
-                var count = Object.keys(json).length;
-                if(i == count-1){
-                  document.getElementById("getdata").style.display = "none";
-                  break;
-                }
             }
         }
 }
@@ -34,16 +29,16 @@ function btnclickhandler(){
                 for(var i = index; i < max; i++){
                     var string = (i+1)+") "+json[i].title+":"+json[i].body;
                     if(i>=6){
-                    var list = document.createElement("li");
-                    var textnode = document.createTextNode(string); 
-                    list.appendChild(textnode);
-                    document.getElementById("myList").appendChild(list);
-                    var count = Object.keys(json).length;
-                    if(i == count-1){
-                      document.getElementById("getdata").style.display = "none";
-                      break;
+                        var list = document.createElement("li");
+                        var textnode = document.createTextNode(string); 
+                        list.appendChild(textnode);
+                        document.getElementById("myList").appendChild(list);
+                        var count = Object.keys(json).length;
+                        if(i == count-1){
+                        document.getElementById("getdata").style.display = "none";
+                        break;
+                        }
                     }
-                }
                 }
                 index = index+6;
                 max = max+6;
